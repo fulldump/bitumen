@@ -7,6 +7,7 @@ import (
 	"github.com/fulldump/goconfig"
 
 	"bitumen/config"
+	"bitumen/fileserver"
 )
 
 func main() {
@@ -21,7 +22,7 @@ func main() {
 
 	goconfig.Read(&c)
 
-	fs := http.FileServer(http.Dir(c.BasePath))
+	fs := fileserver.FileServer(fileserver.Dir(c.BasePath))
 
 	s := &http.Server{
 		Addr:    c.Http.Addr,
