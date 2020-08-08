@@ -21,11 +21,22 @@ func main() {
 			Addr: ":8080",
 		},
 		Ftp: ftp.Config{
-			Host:     "0.0.0.0",
-			Port:     2121,
-			Username: "test",
-			Password: "test",
-			BasePath: "/tmp/scanner",
+			Host: "0.0.0.0",
+			Port: 2121,
+			Credentials: []ftp.Credential{
+				{
+					Username: "alice",
+					Password: "111",
+					BasePath: "/tmp/alice",
+					ReadOnly: false,
+				},
+				{
+					Username: "bob",
+					Password: "222",
+					BasePath: "/tmp/bob",
+					ReadOnly: false,
+				},
+			},
 		},
 	}
 
@@ -46,7 +57,7 @@ func main() {
 		for {
 
 			fmt.Println("Starting ftp")
-			err := ftp.ListenAndServe(&c.Ftp)
+			err := ftp.Serve(&c.Ftp)
 			if err == nil {
 				return
 			}

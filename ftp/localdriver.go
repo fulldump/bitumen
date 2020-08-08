@@ -11,9 +11,9 @@ import (
 )
 
 type LocalDriver struct {
-	Username string
-	Password string
 	BasePath string
+	ReadOnly bool
+	AuthHook AuthHook
 }
 
 func (d *LocalDriver) absolutePath(p string) string {
@@ -28,7 +28,7 @@ func (d *LocalDriver) absolutePath(p string) string {
 }
 
 func (d *LocalDriver) Authenticate(username string, password string) bool {
-	return username == d.Username && password == d.Password
+	return d.AuthHook(username, password, d)
 }
 
 func (d *LocalDriver) Bytes(name string) int64 {
@@ -96,6 +96,10 @@ func (d *LocalDriver) DirContents(name string) ([]os.FileInfo, bool) {
 
 func (d *LocalDriver) DeleteDir(name string) bool {
 
+	if d.ReadOnly {
+		return false
+	}
+
 	name = d.absolutePath(name)
 
 	fmt.Println("DeleteDir not implemented", name)
@@ -125,6 +129,10 @@ func (d *LocalDriver) DeleteDir(name string) bool {
 
 func (d *LocalDriver) DeleteFile(name string) bool {
 
+	if d.ReadOnly {
+		return false
+	}
+
 	name = d.absolutePath(name)
 
 	fmt.Println("DeleteFile not implemented", name)
@@ -140,6 +148,10 @@ func (d *LocalDriver) DeleteFile(name string) bool {
 }
 
 func (d *LocalDriver) Rename(from_name string, to_name string) bool {
+
+	if d.ReadOnly {
+		return false
+	}
 
 	from_name = d.absolutePath(from_name)
 	to_name = d.absolutePath(to_name)
@@ -183,6 +195,10 @@ func (d *LocalDriver) Rename(from_name string, to_name string) bool {
 }
 
 func (d *LocalDriver) MakeDir(name string) bool {
+
+	if d.ReadOnly {
+		return false
+	}
 
 	name = d.absolutePath(name)
 
@@ -233,6 +249,10 @@ func (d *LocalDriver) GetFile(name string, position int64) (io.ReadCloser, bool)
 }
 
 func (d *LocalDriver) PutFile(name string, src io.Reader) bool {
+
+	if d.ReadOnly {
+		return false
+	}
 
 	name = d.absolutePath(name)
 
