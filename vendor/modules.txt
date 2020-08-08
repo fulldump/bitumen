@@ -1,3 +1,46 @@
 # github.com/fulldump/goconfig v1.5.0
 ## explicit
 github.com/fulldump/goconfig
+# github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869
+## explicit
+github.com/jehiah/go-strftime
+# github.com/koofr/go-cryptoutils v0.0.0-20151104083704-fe224388747f
+## explicit
+github.com/koofr/go-cryptoutils/bettermd5
+# github.com/koofr/go-ioutils v0.0.0-20190424123154-969831bf6ea6
+## explicit
+github.com/koofr/go-ioutils
+# github.com/koofr/go-netutils v0.0.0-20150109181258-a882ff2660b6
+## explicit
+# github.com/koofr/goevent v0.0.0-20190411061608-060d2fb163eb
+## explicit
+github.com/koofr/goevent
+# github.com/koofr/graval v0.0.0-20171012130905-a47c49a8a529
+## explicit
+github.com/koofr/graval
+github.com/koofr/graval/memory
+# github.com/koofr/pb v0.0.0-20200512084736-1389bea13f8d
+## explicit
+github.com/koofr/pb
+# github.com/kr/fs v0.1.0
+github.com/kr/fs
+# github.com/onsi/ginkgo v1.14.0
+## explicit
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
+# github.com/pkg/sftp v1.11.0
+## explicit
+github.com/pkg/sftp
+# golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
+## explicit
+golang.org/x/crypto/blowfish
+golang.org/x/crypto/chacha20
+golang.org/x/crypto/curve25519
+golang.org/x/crypto/ed25519
+golang.org/x/crypto/ed25519/internal/edwards25519
+golang.org/x/crypto/internal/subtle
+golang.org/x/crypto/poly1305
+golang.org/x/crypto/ssh
+golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
+# golang.org/x/sys v0.0.0-20200519105757-fe76b779f299
+golang.org/x/sys/cpu
