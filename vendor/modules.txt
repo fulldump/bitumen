@@ -18,29 +18,10 @@ github.com/koofr/goevent
 # github.com/koofr/graval v0.0.0-20171012130905-a47c49a8a529
 ## explicit
 github.com/koofr/graval
-github.com/koofr/graval/memory
 # github.com/koofr/pb v0.0.0-20200512084736-1389bea13f8d
 ## explicit
 github.com/koofr/pb
-# github.com/kr/fs v0.1.0
-github.com/kr/fs
 # github.com/onsi/ginkgo v1.14.0
 ## explicit
-# github.com/pkg/errors v0.8.1
-github.com/pkg/errors
-# github.com/pkg/sftp v1.11.0
+# golang.org/x/net v0.1.0
 ## explicit
-github.com/pkg/sftp
-# golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
-## explicit
-golang.org/x/crypto/blowfish
-golang.org/x/crypto/chacha20
-golang.org/x/crypto/curve25519
-golang.org/x/crypto/ed25519
-golang.org/x/crypto/ed25519/internal/edwards25519
-golang.org/x/crypto/internal/subtle
-golang.org/x/crypto/poly1305
-golang.org/x/crypto/ssh
-golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
-# golang.org/x/sys v0.0.0-20200519105757-fe76b779f299
-golang.org/x/sys/cpu

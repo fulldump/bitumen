@@ -12,6 +12,5 @@ require (
 	github.com/koofr/graval v0.0.0-20171012130905-a47c49a8a529
 	github.com/koofr/pb v0.0.0-20200512084736-1389bea13f8d // indirect
 	github.com/onsi/ginkgo v1.14.0 // indirect
-	github.com/pkg/sftp v1.11.0
-	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
+	golang.org/x/net v0.1.0 // indirect
 )
