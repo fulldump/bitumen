@@ -13,5 +13,5 @@ require (
 	github.com/koofr/pb v0.0.0-20200512084736-1389bea13f8d // indirect
 	github.com/onsi/ginkgo v1.14.0 // indirect
 	github.com/pkg/sftp v1.11.0
-	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
+	golang.org/x/crypto v0.1.0
 )

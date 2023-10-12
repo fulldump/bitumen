@@ -2,8 +2,9 @@ package ftp
 
 import (
 	"fmt"
-	"github.com/koofr/graval"
 	"log"
+
+	"github.com/koofr/graval"
 )
 
 func Serve(c *Config) error {

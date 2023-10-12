@@ -18,11 +18,12 @@ PORTS ?= -p 8080:8080
 
 .PHONY: build
 build:
-	$(GO) build $(FLAGS) -mod vendor -o bin/$(PROJECT) $(PROJECT)
+	$(GO) build $(FLAGS) -mod vendor -o bin/$(PROJECT) ./cmd/bitumen
+	$(GO) build $(FLAGS) -mod vendor -o bin/sftpexample ./cmd/sftpexample
 
 .PHONY: run
 run:
-	$(GO) run $(FLAGS) ./main.go
+	$(GO) run $(FLAGS) ./cmd/bitumen
 
 .PHONY: apitree
 apitree:
