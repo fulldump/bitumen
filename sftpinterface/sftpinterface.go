@@ -73,14 +73,24 @@ func (s *SftpInterface) Serve() error {
 	}
 	fmt.Printf("SFTP listening on %v\n", listener.Addr())
 
-	nConn, err := listener.Accept()
-	if err != nil {
-		log.Fatal("failed to accept incoming connection", err)
+	for {
+
+		nConn, err := listener.Accept()
+		if err != nil {
+			log.Fatal("failed to accept incoming connection", err)
+		}
+
+		go handleConnection(nConn, sshConfig, debugStream)
+
 	}
 
+	return nil
+}
+
+func handleConnection(conn net.Conn, sshConfig *ssh.ServerConfig, debugStream io.Writer) error {
 	// Before use, a handshake must be performed on the incoming
 	// net.Conn.
-	_, chans, reqs, err := ssh.NewServerConn(nConn, sshConfig)
+	_, chans, reqs, err := ssh.NewServerConn(conn, sshConfig)
 	if err != nil {
 		return err // failed to handshake
 	}
@@ -102,7 +112,7 @@ func (s *SftpInterface) Serve() error {
 		}
 		channel, requests, err := newChannel.Accept()
 		if err != nil {
-			log.Fatal("could not accept channel.", err)
+			return fmt.Errorf("accept channel: %w", err)
 		}
 		fmt.Fprintf(debugStream, "Channel accepted\n")
 
